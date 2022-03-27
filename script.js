@@ -37,14 +37,25 @@ function playRound (playerSelection, computerSelection) {
     } else if (computerSelection == 'paper' && playerSelection == 'paper') {
             return "Computer chose paper. It's a tie!";
     } else {
-            return "it's not working!"
+            return "Please choose a valid weapon!"
     }
 }
 
 function game () {
-    for (let i=0; i<5; i++){
-        console.log(playRound(playerSelection(), computerSelection())); {
-                
-        }
+    for (let i = 0; ; i++){
+        console.log(playRound(playerSelection(), computerSelection()));
+        if (compScore===5 || playerScore===5) {
+            console.log (`Computer scored ${compScore} and Player scored ${playerScore}!`);
+            console.log(checkWinner ());
+    break
+    }
+}
+}
+
+function checkWinner (){
+    if (compScore>playerScore) {
+        console.log('Computer wins the game!🏆');
+    }else {
+        console.log('Player wins the game!🏆');
     }
 }
