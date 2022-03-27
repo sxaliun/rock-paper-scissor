@@ -41,7 +41,9 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-function game () {
+//repeat the game (for) until (break) one of the player gets 5 points first (if)
+
+function playGame () {
     for (let i = 0; ; i++){
         console.log(playRound(playerSelection(), computerSelection()));
         if (compScore===5 || playerScore===5) {
@@ -51,6 +53,8 @@ function game () {
     }
 }
 }
+
+//decide who wins and declare the winner
 
 function checkWinner (){
     if (compScore>playerScore) {
