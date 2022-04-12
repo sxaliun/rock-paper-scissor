@@ -11,16 +11,17 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: #2C2740;
+    background-color: #344973;
 }
 
 button {
-    background-color: rgb(149, 240, 75);
+    background-color: #F26849;
     border: 0;
     border-radius: 50%;
     font-size: 4vw;
     transition: box-shadow .5s ease;
-    box-shadow: 5px 5px 0 rgb(102, 41, 46);
+    box-shadow: 5px 5px 0 rgb(70, 53, 53);
+    /* box-shadow: 5px 5px 0 #D98218; */
     cursor: pointer;
     transition: all 0.3s ease;
     padding: 5px;
@@ -56,8 +57,10 @@ button:hover {
 
 #scorePanel {
     height: 80vw;
-    width: 90vw;
-    background-color: #D95F76;
+    width: 93vw;
+    max-width: 60%;
+    max-height: 40%;
+    background-color: #D94862;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,9 +70,8 @@ button:hover {
 }
 
 h3{
-    padding: 15px;
-    margin: 13px;
-    color: rgb(255, 255, 255);
+    padding-top: 15px ;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,20 +88,32 @@ h3{
     font-size: 4vw;
 }
 
-#playerScore, #computerScore {
+#playerScoreD, #compScoreD {
     border-radius: 15px;
     width: 30%;
     height: 60%;
     box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-    background-color: #9EEBBF;
+    background-color: #F2E750;
     padding: 3vw;
     margin: 1vw;
-    font-size: 3vw;
+    font-size: 2.5vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #announcementArea {
     padding: 3vw;
     font-size: 5vw;
+}
+
+#playerScoreDisplay, #computerScoreDisplay {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17vw;
+    color: #344973;
+    /* border: 2px solid #344973; */
 }

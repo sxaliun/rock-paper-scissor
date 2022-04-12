@@ -19,6 +19,11 @@ let computerSelection = function () {
 
 let playerScore = 0;
 let compScore = 0;
+const psd = document.querySelector('#playerScoreD');
+const csd = document.querySelector('#compScoreD');
+const displayP = document.querySelector('#playerScoreDisplay');
+const displayC = document.querySelector('#computerScoreDisplay');
+
 
 function playRound (playerSelection, computerSelection) {
   
@@ -36,7 +41,8 @@ function playRound (playerSelection, computerSelection) {
     playerScore++;
     console.log(`Player beats!`);
     console.log('Player: '+playerScore+' VS '+'Computer:'+compScore);
-    
+    displayP.textContent = playerScore;
+
   }
   //   //COMPUTER WINNING CONDITIONS
   
@@ -49,12 +55,15 @@ function playRound (playerSelection, computerSelection) {
       compScore++;
       console.log(`Computer beats!`);
       console.log('Player: '+playerScore+' VS '+'Computer:'+compScore);
-      return 'Computer chose scissor. Paper is beaten by the scissor!';
+      displayC.textContent = compScore;
     } 
   else {
     console.log('Your code is not working!')
   }
 }
+
+psd.appendChild(displayP);
+csd.appendChild(displayC);
 
 function checkWinner (){
   if (compScore>playerScore) {
