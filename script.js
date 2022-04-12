@@ -65,6 +65,8 @@ function playRound (playerSelection, computerSelection) {
 psd.appendChild(displayP);
 csd.appendChild(displayC);
 
+//decide who wins and announce the winner
+
 function checkWinner (){
   if (compScore>playerScore) {
     console.log('Computer wins the game!🏆');
@@ -75,27 +77,12 @@ function checkWinner (){
 
 //(for) repeat the game until (break) one of the player gets 5 points first (if)
 
-// function playGame () {
-//     for (let i = 0; ; i++){
-//       console.log(playRound(playerSelection(), computerSelection()));
-//       if (compScore === 5 || playerScore === 5) {
-//             console.log (`Computer scored ${compScore} and Player scored ${playerScore}!`);
-//           console.log(checkWinner ());
-//   break
-//   }
-// }
-// }
-
-//decide who wins and announce the winner
-
-// let playerSelection = function () {
-//   if (){
-//     const playerRock = document.querySelector('.rock');
-//     playerRock.addEventListener('click', ()=>{
-
-//     })
-//   }
-//   let playerChoice = ();
-//   console.log(playerChoice);
-//   return playerChoice.toLowerCase ();
-// };
+function playGame () {
+    for (let i = 0; i < 10; i++){
+        playRound;
+        checkWinner;
+        if (playerScore === 2) {
+            checkWinner;
+        }
+}
+};
