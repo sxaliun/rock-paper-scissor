@@ -4,14 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" 
+rel="stylesheet">
+    <script src="script2.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>🎮rock-paper-scissor</title>
 </head>
 <body>
-    <div>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissor">Scissor</button>
+    <div id="scorePanel">
+        <h3>🕹️ SCORE PANEL 🤖</h3>
+        <div id="innerContent">
+            <div id="playerScore">🕹️ Player </div>
+            VS
+            <div id="computerScore">Computer 🤖 </div>
+        </div>
+        <div id="announcementArea">Who wins?</div>
+    </div>
+    <div id="selections"> 
+        <div>Choose your weapon:</div> 
+        <div id="chooseButtons">
+            <button id="rock">🪨</button>
+            <button id="paper">🧻</button>
+            <button id="scissor">✂️</button>
+        </div>
     </div>
     
 </body>
