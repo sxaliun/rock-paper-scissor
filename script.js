@@ -19,27 +19,30 @@ let computerSelection = function () {
 
 let playerScore = 0;
 let compScore = 0;
-const pScoreDisp = document.querySelector('#pScoreD');
-const cScoreDisp = document.querySelector('#cScoreD');
-
+const pScoreDisp = document.querySelector('#playerScore');
+const cScoreDisp = document.querySelector('#computerScore');
+const pScoreD = document.querySelector('#pScoreD');
+const cScoreD = document.querySelector('#cScoreD');
 
 function playRound (playerSelection, computerSelection) {
-  
+
   //TIE CONDITION
   if (computerSelection === playerSelection) {
     console.log(`It's a tie!`);
   }
-
+  
   //PLAYER WINNING CONDITIONS
 
   else if (
     (playerSelection === 'scissor' && computerSelection === 'paper') ||
     (playerSelection === 'paper' && computerSelection === 'rock') ||
     (playerSelection === 'rock' && computerSelection === 'scissor') ) {
-    playerScore++;
-    console.log(`Player beats!`);
-    console.log('Player: '+playerScore+' VS '+'Computer:'+compScore);
-    
+      playerScore++;
+      console.log(`Player beats!`);
+      console.log('Player: '+playerScore+' VS '+'Computer:'+compScore);
+      pScoreD.textContent = playerScore;
+      pScoreDisp.appendChild(pScoreD);
+      
   }
   //   //COMPUTER WINNING CONDITIONS
   
@@ -52,7 +55,8 @@ function playRound (playerSelection, computerSelection) {
       compScore++;
       console.log(`Computer beats!`);
       console.log('Player: '+playerScore+' VS '+'Computer:'+compScore);
-      return 'Computer chose scissor. Paper is beaten by the scissor!';
+      cScoreD.textContent = compScore;
+      cScoreDisp.appendChild(cScoreD);
     } 
   else {
     console.log('Your code is not working!')
