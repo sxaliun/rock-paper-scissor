@@ -100,7 +100,7 @@ h3{
     flex-direction: column;
 }
 
-#pScoreD, #cScoreD {
+#playerScoreUpdate, #computerScoreUpdate {
     display: flex;
     font-size: 20vw;
     font-weight: lighter;

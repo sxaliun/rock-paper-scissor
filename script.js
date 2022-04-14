@@ -19,10 +19,10 @@ let computerSelection = function () {
 
 let playerScore = 0;
 let compScore = 0;
-const pScoreDisp = document.querySelector('#playerScore');
-const cScoreDisp = document.querySelector('#computerScore');
-const pScoreD = document.querySelector('#pScoreD');
-const cScoreD = document.querySelector('#cScoreD');
+const playerScoreDisplay = document.querySelector('#playerScore');
+const computerScoreDiplay = document.querySelector('#computerScore');
+const playerScoreUpdate = document.querySelector('#playerScoreUpdate');
+const computerScoreUpdate = document.querySelector('#computerScoreUpdate');
 
 function playRound (playerSelection, computerSelection) {
 
@@ -40,8 +40,9 @@ function playRound (playerSelection, computerSelection) {
       playerScore++;
       console.log(`Player beats!`);
       console.log('Player: '+playerScore+' VS '+'Computer:'+compScore);
-      pScoreD.textContent = playerScore;
-      pScoreDisp.appendChild(pScoreD);
+      playerScoreUpdate.textContent = playerScore;
+      playerScoreDisplay.appendChild(playerScoreUpdate);
+      scoreCounter;
       
   }
   //   //COMPUTER WINNING CONDITIONS
@@ -55,19 +56,27 @@ function playRound (playerSelection, computerSelection) {
       compScore++;
       console.log(`Computer beats!`);
       console.log('Player: '+playerScore+' VS '+'Computer:'+compScore);
-      cScoreD.textContent = compScore;
-      cScoreDisp.appendChild(cScoreD);
+      computerScoreUpdate.textContent = compScore;
+      computerScoreDiplay.appendChild(computerScoreUpdate);
     } 
   else {
     console.log('Your code is not working!')
   }
 }
 
+//decide who wins and announce the winner
+
 function checkWinner (){
   if (compScore>playerScore) {
     console.log('Computer wins the game!🏆');
   }else {
     console.log('Player wins the game!🏆');
+  }
+}
+
+function scoreCounter (compScore){
+  if (compScore === 5) {
+    console.log('You lose!')
   }
 }
 
@@ -83,17 +92,3 @@ function checkWinner (){
 //   }
 // }
 // }
-
-//decide who wins and announce the winner
-
-// let playerSelection = function () {
-//   if (){
-//     const playerRock = document.querySelector('.rock');
-//     playerRock.addEventListener('click', ()=>{
-
-//     })
-//   }
-//   let playerChoice = ();
-//   console.log(playerChoice);
-//   return playerChoice.toLowerCase ();
-// };
