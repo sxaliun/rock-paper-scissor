@@ -19,16 +19,24 @@ let computerSelection = function () {
 
 let playerScore = 0;
 let compScore = 0;
-const playerScoreDisplay = document.querySelector('#playerScore');
-const computerScoreDiplay = document.querySelector('#computerScore');
+
+const playerScoreWatch = document.querySelector('#playerScore');
 const playerScoreUpdate = document.querySelector('#playerScoreUpdate');
+
+const computerScoreDiplay = document.querySelector('#computerScore');
 const computerScoreUpdate = document.querySelector('#computerScoreUpdate');
+
+
+const panel = document.querySelector('#panel');
+const announcementArea = document.querySelector('#announcementArea');
 
 function playRound (playerSelection, computerSelection) {
 
   //TIE CONDITION
   if (computerSelection === playerSelection) {
     console.log(`It's a tie!`);
+    announcementArea.textContent = 'Tie!';
+    panel.appendChild(announcementArea);
   }
   
   //PLAYER WINNING CONDITIONS
@@ -41,10 +49,10 @@ function playRound (playerSelection, computerSelection) {
       console.log(`Player beats!`);
       console.log('Player: '+playerScore+' VS '+'Computer:'+compScore);
       playerScoreUpdate.textContent = playerScore;
-      playerScoreDisplay.appendChild(playerScoreUpdate);
-      scoreCounter;
-      
-  }
+      playerScoreWatch.appendChild(playerScoreUpdate);
+      announcementArea.textContent = `Computer chose ${computerSelection}. Player +1 score!`;
+      panel.appendChild(announcementArea);
+    }
   //   //COMPUTER WINNING CONDITIONS
   
   else if (
@@ -54,6 +62,8 @@ function playRound (playerSelection, computerSelection) {
     )
     {
       compScore++;
+      announcementArea.textContent = `Computer chose ${computerSelection}. Computer +1 score!`;
+      panel.appendChild(announcementArea);
       console.log(`Computer beats!`);
       console.log('Player: '+playerScore+' VS '+'Computer:'+compScore);
       computerScoreUpdate.textContent = compScore;
@@ -62,33 +72,28 @@ function playRound (playerSelection, computerSelection) {
   else {
     console.log('Your code is not working!')
   }
+  checkWinner();
 }
 
 //decide who wins and announce the winner
 
+
 function checkWinner (){
-  if (compScore>playerScore) {
-    console.log('Computer wins the game!🏆');
-  }else {
-    console.log('Player wins the game!🏆');
+  if (compScore===5) {
+    announcementArea.textContent = 'Computer wins the game!🏆';
+    panel.appendChild(announcementArea);
+    selectionBtns.forEach(button => {
+      button.removeEventListener('click', getPlayerChoice);
+    });  
+  }else if ( playerScore===5){
+    announcementArea.textContent = 'Player wins the game!🏆';
+    panel.appendChild(announcementArea);
+    selectionBtns.forEach(button => {
+      button.removeEventListener('click', getPlayerChoice);
+    });
+  
   }
 }
 
-function scoreCounter (compScore){
-  if (compScore === 5) {
-    console.log('You lose!')
-  }
-}
-
-//(for) repeat the game until (break) one of the player gets 5 points first (if)
-
-// function playGame () {
-//     for (let i = 0; ; i++){
-//       console.log(playRound(playerSelection(), computerSelection()));
-//       if (compScore === 5 || playerScore === 5) {
-//             console.log (`Computer scored ${compScore} and Player scored ${playerScore}!`);
-//           console.log(checkWinner ());
-//   break
-//   }
-// }
-// }
+const restart = document.querySelector('#restart');
+restart.addEventListener('click',() => location.reload());
