@@ -19,10 +19,8 @@ let computerSelection = function () {
 
 let playerScore = 0;
 let compScore = 0;
-const psd = document.querySelector('#playerScoreD');
-const csd = document.querySelector('#compScoreD');
-const displayP = document.querySelector('#playerScoreDisplay');
-const displayC = document.querySelector('#computerScoreDisplay');
+const pScoreDisp = document.querySelector('#pScoreD');
+const cScoreDisp = document.querySelector('#cScoreD');
 
 
 function playRound (playerSelection, computerSelection) {
@@ -41,8 +39,7 @@ function playRound (playerSelection, computerSelection) {
     playerScore++;
     console.log(`Player beats!`);
     console.log('Player: '+playerScore+' VS '+'Computer:'+compScore);
-    displayP.textContent = playerScore;
-
+    
   }
   //   //COMPUTER WINNING CONDITIONS
   
@@ -55,17 +52,12 @@ function playRound (playerSelection, computerSelection) {
       compScore++;
       console.log(`Computer beats!`);
       console.log('Player: '+playerScore+' VS '+'Computer:'+compScore);
-      displayC.textContent = compScore;
+      return 'Computer chose scissor. Paper is beaten by the scissor!';
     } 
   else {
     console.log('Your code is not working!')
   }
 }
-
-psd.appendChild(displayP);
-csd.appendChild(displayC);
-
-//decide who wins and announce the winner
 
 function checkWinner (){
   if (compScore>playerScore) {
@@ -77,12 +69,27 @@ function checkWinner (){
 
 //(for) repeat the game until (break) one of the player gets 5 points first (if)
 
-function playGame () {
-    for (let i = 0; i < 10; i++){
-        playRound;
-        checkWinner;
-        if (playerScore === 2) {
-            checkWinner;
-        }
-}
-};
+// function playGame () {
+//     for (let i = 0; ; i++){
+//       console.log(playRound(playerSelection(), computerSelection()));
+//       if (compScore === 5 || playerScore === 5) {
+//             console.log (`Computer scored ${compScore} and Player scored ${playerScore}!`);
+//           console.log(checkWinner ());
+//   break
+//   }
+// }
+// }
+
+//decide who wins and announce the winner
+
+// let playerSelection = function () {
+//   if (){
+//     const playerRock = document.querySelector('.rock');
+//     playerRock.addEventListener('click', ()=>{
+
+//     })
+//   }
+//   let playerChoice = ();
+//   console.log(playerChoice);
+//   return playerChoice.toLowerCase ();
+// };
